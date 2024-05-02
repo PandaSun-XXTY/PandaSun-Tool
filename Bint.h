@@ -371,6 +371,14 @@ class Bint {
 			*this = b.multiplication(*this);
 		}
 
+		virtual bool operator>(const Bint &b)const {
+			return this->compareTo(b) == 1;
+		}
+
+		virtual bool operator<(const Bint &b)const {
+			return this->compareTo(b) == -1;
+		}
+
 		Bint(int sign, int* numIn, int length, bool del, int start) {	//2024.2.11审查通过		//给出所有参数情况下的复制
 			this->sign = sign;
 			this->length = length;
